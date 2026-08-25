@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero'
 import { Reassurance } from '@/components/sections/Reassurance'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { ChargerSolutions } from '@/components/sections/ChargerSolutions'
+import { Interactive3DStage } from '@/components/sections/Interactive3DStage'
 import { DynamicLoadBalancing } from '@/components/sections/DynamicLoadBalancing'
 import { InstallationCalculator } from '@/components/calculator/InstallationCalculator'
 import { TrustSection } from '@/components/sections/TrustSection'
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Reassurance />
       <HowItWorks />
       <ChargerSolutions />
+      <Interactive3DStage />
       <DynamicLoadBalancing />
       <InstallationCalculator />
       <TrustSection />
