@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { notFound } from 'next'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MapPin, Home, AlertTriangle, CheckCircle, HelpCircle } from 'lucide-react'
 import { getCityBySlug, getAllCitySlugs } from '@/config/cities'
