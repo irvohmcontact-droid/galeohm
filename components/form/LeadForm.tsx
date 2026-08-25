@@ -151,7 +151,7 @@ export function LeadForm() {
             onChange={handleChange}
             style={{ display: 'none' }}
             tabIndex={-1}
-            autocomplete="off"
+            autoComplete="off"
           />
 
           {!submitted ? (

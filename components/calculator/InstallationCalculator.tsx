@@ -158,7 +158,8 @@ export function InstallationCalculator() {
                         }`}
                       />
                     </button>
-                  ))}
+                  )
+                })}
               </div>
 
               {step > 1 && (
