@@ -18,7 +18,8 @@ export function SectionHeader({
   headingLevel = 2,
   className,
 }: SectionHeaderProps) {
-  const HeadingTag = `h${headingLevel}` as keyof JSX.IntrinsicElements
+  const headingClasses =
+    'text-display-sm sm:text-display-md lg:text-display-lg text-ink-DEFAULT font-bold tracking-tight text-balance'
 
   return (
     <div
@@ -33,9 +34,13 @@ export function SectionHeader({
           {eyebrow}
         </span>
       )}
-      <HeadingTag className="text-display-sm sm:text-display-md lg:text-display-lg text-ink-DEFAULT font-bold tracking-tight text-balance">
-        {title}
-      </HeadingTag>
+      {headingLevel === 1 ? (
+        <h1 className={headingClasses}>{title}</h1>
+      ) : headingLevel === 3 ? (
+        <h3 className={headingClasses}>{title}</h3>
+      ) : (
+        <h2 className={headingClasses}>{title}</h2>
+      )}
       {subtitle && (
         <p className="mt-4 text-base sm:text-lg text-ink-muted leading-relaxed text-balance">
           {subtitle}
