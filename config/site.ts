@@ -8,10 +8,10 @@ export const siteConfig = {
     'GALEOHM installe vos bornes de recharge pour véhicules électriques. Étude personnalisée, installation professionnelle, devis gratuit en Île-de-France.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://galeohm.fr',
 
-  // === COORDONNÉES — À RENSEIGNER AVANT MISE EN LIGNE ===
+  // === COORDONNÉES — GALEOHM ===
   contact: {
-    phone: '01 XX XX XX XX',
-    phoneHref: 'tel:+33100000000',
+    phone: '01 84 16 53 75',
+    phoneHref: 'tel:+33184165375',
     email: 'contact@galeohm.fr',
     address: 'Adresse à compléter',
     city: 'Île-de-France',
