@@ -1,6 +1,7 @@
 import React from 'react'
 import { Hero } from '@/components/sections/Hero'
 import { Reassurance } from '@/components/sections/Reassurance'
+import { TeltoChargeShowcase } from '@/components/sections/TeltoChargeShowcase'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { ChargerSolutions } from '@/components/sections/ChargerSolutions'
 import { Interactive3DStage } from '@/components/sections/Interactive3DStage'
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Reassurance />
+      <TeltoChargeShowcase />
       <HowItWorks />
       <ChargerSolutions />
       <Interactive3DStage />

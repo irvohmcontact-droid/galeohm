@@ -65,8 +65,8 @@ export function Hero() {
           <div className="lg:col-span-5 relative">
             <div className="macro-zoom-container shadow-2xl border border-slate-200/80 bg-slate-950 aspect-[4/3] group">
               <Image
-                src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=85"
-                alt="Macro gros plan borne de recharge et véhicule électrique GALEOHM"
+                src="/images/teltonika-wall.jpg"
+                alt="Installation borne de recharge murale TeltoCharge par GALEOHM"
                 fill
                 priority
                 className="object-cover brightness-95 group-hover:brightness-105"

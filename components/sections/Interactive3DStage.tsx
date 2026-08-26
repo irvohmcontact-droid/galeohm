@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Zap, Activity, ShieldCheck, Gauge, Sliders, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import { Zap, Activity, ShieldCheck, Gauge, Sparkles } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Button } from '@/components/ui/Button'
 
@@ -157,56 +158,37 @@ export function Interactive3DStage() {
               style={{
                 transform: `rotateX(${mousePos.y}deg) rotateY(${mousePos.x}deg)`,
               }}
-              className="card-3d-tilt relative rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 shadow-2xl flex flex-col items-center justify-center min-h-[460px] group cursor-grab active:cursor-grabbing"
+              className="card-3d-tilt relative rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 shadow-2xl flex flex-col items-center justify-center min-h-[480px] group cursor-grab active:cursor-grabbing"
             >
-              {/* Interactive 3D Wallbox Model Visual */}
-              <div className="relative w-48 h-64 sm:w-56 sm:h-72 rounded-3xl bg-slate-950 border-2 border-slate-700/80 shadow-2xl flex flex-col items-center justify-between p-6 overflow-hidden">
-                {/* Metallic bevel texture */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/40 pointer-events-none" />
+              {/* Authentic 3D Product Image Visual */}
+              <div className="relative w-64 h-80 sm:w-72 sm:h-96 flex items-center justify-center">
+                <Image
+                  src="/images/teltonika-product.png"
+                  alt="Modèle 3D borne de recharge TeltoCharge GALEOHM"
+                  fill
+                  className="object-contain drop-shadow-[0_20px_40px_rgba(37,99,235,0.35)] transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
 
-                {/* 3D LED Power Ring */}
-                <div className="relative mt-4 flex items-center justify-center">
-                  <div
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 flex items-center justify-center transition-all duration-500 relative"
-                    style={{
-                      borderColor: current.ringColor,
-                      boxShadow: `0 0 35px ${current.ringColor}60`,
-                    }}
-                  >
-                    <div className="text-center">
-                      <Zap className="w-8 h-8 mx-auto text-white animate-pulse" />
-                      <span className="text-xs font-extrabold font-mono text-white mt-1 block">
-                        {selectedPower} kW
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* GALEOHM Wordmark on 3D Body */}
-                <div className="text-center z-10">
-                  <span className="text-xs font-extrabold tracking-[0.25em] text-slate-300 block uppercase">
-                    GALEOHM
-                  </span>
-                  <span className="text-[0.6rem] text-emerald-400 font-mono tracking-widest block uppercase mt-0.5">
-                    ● EN CHARGE
-                  </span>
-                </div>
-
-                {/* Cable Output Node */}
-                <div className="w-12 h-5 rounded-t-lg bg-slate-800 border-t border-slate-600 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-brand-500 animate-ping" />
-                </div>
+                {/* Dynamic Glowing LED Ring Overlay behind product */}
+                <div
+                  className="absolute w-36 h-36 rounded-full border-4 transition-all duration-500 opacity-80 pointer-events-none top-1/3"
+                  style={{
+                    borderColor: current.ringColor,
+                    boxShadow: `0 0 50px ${current.ringColor}`,
+                  }}
+                />
               </div>
 
               {/* Floating 3D Micro Glass Badges */}
               <div className="absolute top-6 left-6 glass-dark px-3 py-2 rounded-xl text-[0.7rem] font-bold text-slate-300 flex items-center gap-2 border border-slate-700/60 shadow-xl animate-float">
                 <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-                <span>3D Interactive Stage — Bougez votre souris</span>
+                <span>3D Stage Interactive — Bougez votre souris</span>
               </div>
 
               <div className="absolute bottom-6 right-6 glass-dark px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-400 flex items-center gap-2 border border-slate-700/60 shadow-xl animate-float-delayed">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>Délestage dynamique connecté</span>
+                <span>{selectedPower} kW ● En charge</span>
               </div>
             </div>
           </div>
