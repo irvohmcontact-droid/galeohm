@@ -47,6 +47,6 @@ Deux scènes résidentielles originales générées et encodées en WebP complè
 
 Sélecteur interactif maison/copropriété/solaire avec onglets accessibles au clavier et préremplissage contextuel du devis via `?projet=`. Navigation de page par ancres, filtres de guides regroupés en sept besoins avec recherche réinitialisable. Étapes du devis revisitées avec progression visible, retour aux étapes déjà ouvertes et validation avant navigation vers une étape ultérieure. Aucun envoi API ajouté.
 
-## CTA : page de livre au clic
+## Correction des CTA
 
-`components/animated-cta.tsx` conserve un lien HTML natif. Au clic, au toucher ou à l’activation clavier, une demi-page à deux faces pivote de 180° autour du centre du bouton. Elle révèle la couleur opposée (bleu/vert), puis la navigation démarre après 620 ms. Aucun reflet ni animation automatique au survol. Les clics modifiés (Ctrl/Cmd, nouvel onglet) et la préférence de réduction des animations conservent la navigation native immédiate. Le verrou d’activation évite les doubles navigations et les temporisations sont nettoyées au démontage. Aucun changement au formulaire ni à l’API.
+Le composant commun rend un lien HTML natif, un seul libellé et une flèche. Les deux faces et la temporisation de navigation ont été supprimées. La mise en page minimale est isolée dans un CSS Module afin que les styles du composant soient compilés avec lui. L’effet demandé sera repris à partir d’une référence visuelle précise.
