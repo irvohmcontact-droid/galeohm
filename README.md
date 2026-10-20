@@ -67,4 +67,8 @@ npm run build
 
 Les dépendances ajoutées sont `@radix-ui/react-slot` et `class-variance-authority`. Aucun provider, hook, état, image ou secret supplémentaire n’est requis. Le composant expose `variant`, `asChild` et les attributs natifs de bouton. Les CTA utilisent `asChild` avec un lien `/devis` et les paramètres de projet existants. Les icônes restent fournies par `lucide-react`.
 
-Le dégradé reprend les couleurs et valeurs du code fourni. Le même effet est accessible au clavier et à l’appui ; les transitions sont désactivées pour `prefers-reduced-motion`. Les règles sont ajoutées hors couche pour ne pas être masquées par les anciens styles globaux. Le fichier `components/ui/gradient-button-demo.tsx` expose les deux variantes pour développement ; il n’est pas affiché dans les pages commerciales.
+Le dégradé conserve le mécanisme du code fourni, avec une palette adaptée à GALEOHM : vert lumineux et texte bleu pétrole pour les actions principales, dégradé pétrole pour la variante secondaire. Le même effet est accessible au clavier et à l’appui ; les transitions sont désactivées pour `prefers-reduced-motion`. Les règles sont ajoutées hors couche pour ne pas être masquées par les anciens styles globaux. Le fichier `components/ui/gradient-button-demo.tsx` expose les deux variantes pour développement ; il n’est pas affiché dans les pages commerciales.
+
+## Hiérarchie des couleurs
+
+Les tokens de marque sont déclarés dans `app/globals.css` : pétrole `#063b49` pour identité et titres, vert logo `#78a925`, blanc cassé `#f7f8f2` et fonds sauge `#eaf0e2`. Les CTA de devis utilisent le vert lumineux `#c3f05b`, un dégradé vert animé et un texte pétrole. Les liens secondaires restent soulignés ou en contour ; la zone finale utilise un fond sauge pour laisser ressortir son CTA. Les couleurs du fichier logo fourni sont conservées.
