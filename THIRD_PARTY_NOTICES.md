@@ -9,3 +9,12 @@ Photo: https://images.unsplash.com/photo-1593941707882-a5bba14938c7 (illustratio
 Solar photo: https://images.unsplash.com/photo-1508514177221-188b1cf16e9d (illustration).
 
 Two original AI-generated editorial illustrations: public/maison-recharge.webp and public/garage-recharge.webp. Created with the built-in image generation tool for GALEOHM. These are conceptual scenes, not customer project photographs. Original prompts: premium French limestone and timber home with white EV and teal wallbox at sunset; contemporary residential garage with graphite wallbox and dark EV in natural daylight. Encoded as WebP for web delivery.
+
+## Klyv UI ShimmerButton
+
+Copyright (c) 2026 Klyv contributors. MIT License.
+
+Source: https://github.com/Klyv-UI/klyv/blob/main/src/components/ShimmerButton/ShimmerButton.tsx
+Discovery: https://preview.21st.dev/@klyv-ui/components/klyv-shimmer-button
+
+Adapted in components/animated-cta.tsx for native links, GALEOHM colors, pointer light, hover sheen, keyboard focus and reduced-motion support. The MIT license text included above applies to this component as well.

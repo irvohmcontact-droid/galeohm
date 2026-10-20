@@ -46,3 +46,7 @@ Deux scènes résidentielles originales générées et encodées en WebP complè
 ## Améliorations du parcours
 
 Sélecteur interactif maison/copropriété/solaire avec onglets accessibles au clavier et préremplissage contextuel du devis via `?projet=`. Navigation de page par ancres, filtres de guides regroupés en sept besoins avec recherche réinitialisable. Étapes du devis revisitées avec progression visible, retour aux étapes déjà ouvertes et validation avant navigation vers une étape ultérieure. Aucun envoi API ajouté.
+
+## CTA animés
+
+`components/animated-cta.tsx` adapte le ShimmerButton Klyv UI repéré sur 21st.dev : reflet lumineux, halo suivant le pointeur sans état React et flèche au survol. Les boutons de navigation restent de vrais liens. Animation ponctuelle dans le hero, au survol ou focus ailleurs ; pas d’effet magnétique ni de boucle permanente. Les effets de mouvement sont désactivés avec prefers-reduced-motion et le halo avec un pointeur tactile. Aucun changement à la transmission du formulaire.
