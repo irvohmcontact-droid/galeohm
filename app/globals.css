@@ -46,27 +46,27 @@
 }
 @property --color-1 {
   syntax: '<color>';
-  initial-value: #000;
+  initial-value: #d8f99a;
   inherits: false;
 }
 @property --color-2 {
   syntax: '<color>';
-  initial-value: #08012c;
+  initial-value: #c3f05b;
   inherits: false;
 }
 @property --color-3 {
   syntax: '<color>';
-  initial-value: #4e1e40;
+  initial-value: #a6d954;
   inherits: false;
 }
 @property --color-4 {
   syntax: '<color>';
-  initial-value: #70464e;
+  initial-value: #8bc646;
   inherits: false;
 }
 @property --color-5 {
   syntax: '<color>';
-  initial-value: #88394c;
+  initial-value: #c3f05b;
   inherits: false;
 }
 @property --border-angle {
@@ -76,12 +76,12 @@
 }
 @property --border-color-1 {
   syntax: '<color>';
-  initial-value: hsla(340, 75%, 60%, 0.2);
+  initial-value: rgba(6, 59, 73, 0.18);
   inherits: true;
 }
 @property --border-color-2 {
   syntax: '<color>';
-  initial-value: hsla(340, 75%, 40%, 0.75);
+  initial-value: rgba(6, 59, 73, 0.5);
   inherits: true;
 }
 @property --stop-1 {
@@ -117,7 +117,7 @@
   appearance: none;
   cursor: pointer;
   border-radius: 11px;
-  color: white;
+  color: var(--action-ink);
   background: radial-gradient(
     var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
     var(--color-1) var(--stop-1),
@@ -168,14 +168,14 @@
   --pos-y: 91.51%;
   --spread-x: 120.24%;
   --spread-y: 103.18%;
-  --color-1: #c96287;
-  --color-2: #c66c64;
-  --color-3: #cc7d23;
-  --color-4: #37140a;
-  --color-5: #000;
+  --color-1: #e3ffb0;
+  --color-2: #d4f887;
+  --color-3: #b6e968;
+  --color-4: #98ce54;
+  --color-5: #c3f05b;
   --border-angle: 190deg;
-  --border-color-1: hsla(340, 78%, 90%, 0.1);
-  --border-color-2: hsla(340, 75%, 90%, 0.6);
+  --border-color-1: rgba(6, 59, 73, 0.1);
+  --border-color-2: rgba(6, 59, 73, 0.55);
   --stop-1: 0%;
   --stop-2: 8.8%;
   --stop-3: 21.44%;
@@ -183,13 +183,13 @@
   --stop-5: 85.76%;
 }
 .gradient-button-variant {
-  --color-1: #000022;
-  --color-2: #1f3f6d;
-  --color-3: #469396;
-  --color-4: #f1ffa5;
+  --color-1: #063b49;
+  --color-2: #0a5360;
+  --color-3: #17636b;
+  --color-4: #327b78;
   --border-angle: 200deg;
-  --border-color-1: hsla(320, 75%, 90%, 0.6);
-  --border-color-2: hsla(320, 50%, 90%, 0.15);
+  --border-color-1: rgba(195, 240, 91, .45);
+  --border-color-2: rgba(195, 240, 91, .12);
 }
 .gradient-button-variant:hover,
 .gradient-button-variant:focus-visible,
@@ -198,19 +198,19 @@
   --pos-y: 95.51%;
   --spread-x: 110.24%;
   --spread-y: 110.2%;
-  --color-1: #000020;
-  --color-2: #f1ffa5;
-  --color-3: #469396;
-  --color-4: #1f3f6d;
-  --color-5: #000;
+  --color-1: #072f39;
+  --color-2: #327b78;
+  --color-3: #17636b;
+  --color-4: #0a5360;
+  --color-5: #d8f99a;
   --stop-1: 0%;
   --stop-2: 10%;
   --stop-3: 35.44%;
   --stop-4: 71.34%;
   --stop-5: 90.76%;
   --border-angle: 210deg;
-  --border-color-1: hsla(320, 75%, 90%, 0.2);
-  --border-color-2: hsla(320, 50%, 90%, 0.75);
+  --border-color-1: rgba(195, 240, 91, .2);
+  --border-color-2: rgba(195, 240, 91, .65);
 }
 .gradient-button:focus-visible {
   outline: 3px solid #81aa3a;
@@ -225,3 +225,67 @@
   .gradient-button,
   .button.gradient-button { transition: none; }
 }
+
+/* Brand hierarchy: petrol identity, quiet surfaces, lime conversion actions. */
+:root {
+  --brand-petrol: #063b49;
+  --brand-deep: #072f39;
+  --brand-green: #78a925;
+  --brand-green-text: #466b21;
+  --surface: #f7f8f2;
+  --surface-soft: #eaf0e2;
+  --action: #c3f05b;
+  --action-hover: #d4f887;
+  --action-ink: #063b49;
+  --ink: var(--brand-petrol);
+  --deep: var(--brand-deep);
+  --lime: var(--action);
+  --paper: var(--surface);
+}
+.brand { color: var(--brand-petrol); }
+.brand > svg, .brand span { color: var(--brand-green); }
+em { color: var(--brand-green-text); }
+.hero h1 em { color: var(--action); }
+.cta-v2 { background: var(--surface-soft); }
+.cta-v2 p { color: #4e6556; }
+.button.gradient-button {
+  border: 1px solid #78a925;
+  box-shadow: 0 5px 16px #063b4918;
+}
+.button.gradient-button svg { color: currentColor; }
+.gradient-button.gradient-button-variant,
+.button.gradient-button.gradient-button-variant {
+  color: #fff;
+  --color-5: #063b49;
+  border-color: #327b78;
+}
+.gradient-button-variant:is(:hover, :focus-visible, :active) {
+  --color-5: #063b49;
+}
+.button.outline, .button.outline:hover {
+  background: transparent;
+  color: var(--brand-petrol);
+  border: 1px solid currentColor;
+  box-shadow: none;
+}
+.hero .button.outline, .solar-panel .button.outline,
+footer .button.outline, .quote-band .button.outline {
+  color: #f7f8f2;
+}
+.form-actions .button {
+  background: var(--action);
+  color: var(--action-ink);
+  border: 1px solid #78a925;
+}
+.form-actions .button:hover { background: var(--action-hover); }
+.quote-review .button {
+  background: var(--brand-petrol);
+  color: #fff;
+}
+.text-link, .underlink, .finder-guide {
+  text-underline-offset: 5px;
+}
+.nav a:hover, .home-chapters > a:hover, .finder-guide:hover {
+  color: var(--brand-green-text);
+}
+.hero .text-link, .solar-panel > .text-link { color: #f7f8f2; }
