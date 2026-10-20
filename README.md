@@ -42,3 +42,7 @@ La route `/devis` propose trois étapes validées côté navigateur : logement, 
 ## Enrichissement visuel et éditorial
 
 Deux scènes résidentielles originales générées et encodées en WebP complètent les photographies existantes. Elles sont explicitement présentées comme illustrations. Les 29 guides incluent désormais un cas concret, une liste de vérification, une question complémentaire, une erreur à éviter et plusieurs accès au devis. Les boutons de devis sont répétés dans les sections clés et une barre fixe est affichée sur mobile hors de la page devis.
+
+## Améliorations du parcours
+
+Sélecteur interactif maison/copropriété/solaire avec onglets accessibles au clavier et préremplissage contextuel du devis via `?projet=`. Navigation de page par ancres, filtres de guides regroupés en sept besoins avec recherche réinitialisable. Étapes du devis revisitées avec progression visible, retour aux étapes déjà ouvertes et validation avant navigation vers une étape ultérieure. Aucun envoi API ajouté.
