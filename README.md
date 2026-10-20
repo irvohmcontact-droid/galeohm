@@ -34,3 +34,11 @@ Compléter et vérifier identité légale, coordonnées, zone d’intervention, 
 ## Crédits
 
 Logo fourni par GALEOHM. Photographies Unsplash d’illustration. Text Blur Reveal de Wensity Labs, repéré sur 21st.dev : voir THIRD_PARTY_NOTICES.md.
+
+## Parcours devis (version de préparation)
+
+La route `/devis` propose trois étapes validées côté navigateur : logement, recharge et coordonnées. Le dernier bouton prépare un récapitulatif consultable et téléchargeable. Aucune requête réseau, aucun e-mail et aucun stockage serveur ne sont déclenchés. Le message de confirmation précise que la demande n’est pas envoyée. Le contrat d’API et la transmission seront intégrés dans un second temps. Les données restent uniquement dans l’état React de la page, sans localStorage.
+
+## Enrichissement visuel et éditorial
+
+Deux scènes résidentielles originales générées et encodées en WebP complètent les photographies existantes. Elles sont explicitement présentées comme illustrations. Les 29 guides incluent désormais un cas concret, une liste de vérification, une question complémentaire, une erreur à éviter et plusieurs accès au devis. Les boutons de devis sont répétés dans les sections clés et une barre fixe est affichée sur mobile hors de la page devis.

@@ -7,3 +7,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Photo: https://images.unsplash.com/photo-1593941707882-a5bba14938c7 (illustration, not a GALEOHM installation).
 
 Solar photo: https://images.unsplash.com/photo-1508514177221-188b1cf16e9d (illustration).
+
+Two original AI-generated editorial illustrations: public/maison-recharge.webp and public/garage-recharge.webp. Created with the built-in image generation tool for GALEOHM. These are conceptual scenes, not customer project photographs. Original prompts: premium French limestone and timber home with white EV and teal wallbox at sunset; contemporary residential garage with graphite wallbox and dark EV in natural daylight. Encoded as WebP for web delivery.
