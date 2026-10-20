@@ -21,3 +21,206 @@
 @media(max-width:1100px){.hero-v2 h1{font-size:77px;letter-spacing:-3.8px}.hero-project-card{width:240px;right:4%;padding:22px;bottom:110px}.hero-project-card>strong{font-size:28px}.hero-project-card>.eyebrow{font-size:7px}.hero-project-icon{width:42px;height:42px;margin-bottom:18px}.hero-v2 .hero-content>p{max-width:390px;font-size:16px}.home-chapters{gap:20px}.home-chapters>span{display:none}.finder-panel{min-height:590px}.finder-copy{padding:32px}.finder-copy h3{font-size:33px}.finder-copy>p{font-size:14px}.finder-tabs>button{padding:18px 12px;font-size:12px;gap:10px}.finder-tabs>button>svg:last-child{margin-left:0}.guide-search-area .filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:15px;scrollbar-width:thin}.guide-search-area .filters button{flex-shrink:0}.form-steps>button{font-size:10px}.article-layout{gap:35px}}
 @media(max-width:760px){.hero-v2{margin:9px 9px 0;border-radius:10px;min-height:715px;height:auto}.hero-v2 .hero-content{padding:48px 6% 96px}.hero-v2 h1{font-size:clamp(53px,11.5vw,77px);letter-spacing:-2.8px;line-height:1.07;margin:26px 0 24px}.hero-v2 .hero-content>.eyebrow{font-size:7px;letter-spacing:1px;padding:8px 10px}.hero-v2 .hero-content>p{font-size:16px;line-height:1.8;max-width:360px}.hero-v2 .hero-actions{margin-top:28px;gap:22px}.hero-v2 .hero-actions>.button{width:100%;max-width:330px;justify-content:space-between;font-size:16px;min-height:61px;padding:20px 23px}.hero-v2 .hero-actions>.text-link{font-size:12px}.hero-project-card{display:none}.hero-v2 .hero-bottom{left:6%;right:6%;bottom:23px}.hero-reassurance{font-size:8px;gap:10px 12px;max-width:330px}.home-chapters{margin:0 7%;padding:18px 0 15px;overflow-x:auto;gap:27px;scrollbar-width:none;font-size:10px;justify-content:flex-start}.home-chapters::-webkit-scrollbar{display:none}.home-chapters>a{flex-shrink:0}.benefit-strip{padding:25px 7% 0;gap:18px}.benefit-strip>div{font-size:10px;gap:9px}.benefit-strip>div>svg{width:32px;height:32px;flex-shrink:0}.editorial-intro{padding:55px 7% 65px;gap:35px}.intro-photo{min-height:350px}.editorial-intro h2,.split-feature h2{font-size:37px;letter-spacing:-1.5px;line-height:1.14}.editorial-intro p{font-size:14px;line-height:1.85}.editorial-intro .lead{font-size:19px;line-height:1.6}.section-heading h2{font-size:39px}.section-heading>p{font-size:14px}.finder-tabs{padding:6px;gap:4px}.finder-tabs>button{flex-direction:column;gap:8px;padding:14px 4px;font-size:10px;line-height:1.3}.finder-tabs>button>svg:first-child{width:20px;height:20px}.finder-tabs>button>svg:last-child{display:none}.finder-panel{display:flex;flex-direction:column;min-height:0}.finder-image{height:300px;min-height:300px}.finder-image-caption{left:18px;right:18px;bottom:18px;padding:14px}.finder-image-caption>span{font-size:8px}.finder-copy{padding:28px 23px 24px}.finder-copy h3{font-size:31px;letter-spacing:-1.1px;line-height:1.2;margin:16px 0}.finder-copy>p{font-size:14px}.finder-copy ul{margin-bottom:23px}.finder-copy li{font-size:12px}.finder-copy .button{width:100%;max-width:none;justify-content:space-between;font-size:14px;min-height:56px}.finder-guide{font-size:11px;gap:12px;max-width:100%;line-height:1.7}.finder-note{font-size:10px;margin-top:24px}.quote-band{padding:37px 7%}.quote-band h2{font-size:28px;letter-spacing:-.9px}.quote-band .button{font-size:14px;width:100%;min-height:56px}.quote-band>div:last-child{display:block;max-width:330px}.budget-items{padding:0 21px}.budget-item{gap:16px}.budget-item h3{font-size:21px}.budget-item p{font-size:13px;line-height:1.8}.budget-item>span{width:25px;height:25px;font-size:9px}.solar-editorial{min-height:670px}.solar-panel{padding-top:100px}.process .step{gap:19px}.step>span{width:30px;height:30px;font-size:10px}.step h3{font-size:22px}.step p{font-size:14px;line-height:1.8}.guide-index .page-heading{padding:45px 7% 38px;margin-bottom:25px}.guide-index .page-heading h1{font-size:43px;line-height:1.14}.guide-search-area{margin:0 7% 25px}.guide-search-area>.search{padding:10px 13px;min-height:58px;gap:12px}.guide-search-area .search input{font-size:13px}.search-count{display:none}.guide-search-area .filters{padding:17px 0 12px;gap:7px}.guide-search-area .filters button{padding:10px 12px;font-size:10px;gap:8px}.results-heading .result-count{font-size:10px}.reset-filters{font-size:9px}.guide-index .topic-grid{gap:23px}.topic-photo-wrap{height:220px}.topic-photo-wrap .topic-image{margin:0;width:100%;height:100%}.topic-content{padding:25px}.topic-content h2{font-size:25px;line-height:1.25}.topic-content p{font-size:14px}.empty-guides{padding:40px 22px}.empty-guides h2{font-size:29px}.empty-guides p{font-size:14px}.article-heading h1{font-size:40px}.article-cover{height:260px}.article-layout aside{border-right:0;padding-right:0}.article-body>section>p{font-size:16px;line-height:1.9}.article-body h2{font-size:29px}.quote-intro{padding:38px 7%}.quote-intro h1{font-size:52px;letter-spacing:-2px}.quote-intro img{height:230px}.quote-form-section{padding:30px 5% 5px}.form-steps{padding:20px 13px;gap:7px}.form-steps>button{font-size:9px;gap:6px}.form-steps>button>span{width:24px;height:24px;font-size:10px}.form-steps>button b{max-width:75px}.quote-help-grid{gap:16px}.quote-help-grid>div{padding:25px}.mobile-quote>a{box-shadow:0 4px 14px #063b4920}.cta-v2:before{display:none}.cta-v2:after{right:-480px}}
 @media(prefers-reduced-motion:reduce){.topic:hover .topic-photo-wrap img{transform:none}.quote-progress>span{transition:none}}
+
+/* Gradient Button — Serafim / 21st.dev. Supplied source, Tailwind 4 integration.
+   Unlayered rules retain precedence over the site's existing unlayered .button styles. */
+@property --pos-x {
+  syntax: '<percentage>';
+  initial-value: 11.14%;
+  inherits: false;
+}
+@property --pos-y {
+  syntax: '<percentage>';
+  initial-value: 140%;
+  inherits: false;
+}
+@property --spread-x {
+  syntax: '<percentage>';
+  initial-value: 150%;
+  inherits: false;
+}
+@property --spread-y {
+  syntax: '<percentage>';
+  initial-value: 180.06%;
+  inherits: false;
+}
+@property --color-1 {
+  syntax: '<color>';
+  initial-value: #000;
+  inherits: false;
+}
+@property --color-2 {
+  syntax: '<color>';
+  initial-value: #08012c;
+  inherits: false;
+}
+@property --color-3 {
+  syntax: '<color>';
+  initial-value: #4e1e40;
+  inherits: false;
+}
+@property --color-4 {
+  syntax: '<color>';
+  initial-value: #70464e;
+  inherits: false;
+}
+@property --color-5 {
+  syntax: '<color>';
+  initial-value: #88394c;
+  inherits: false;
+}
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 20deg;
+  inherits: true;
+}
+@property --border-color-1 {
+  syntax: '<color>';
+  initial-value: hsla(340, 75%, 60%, 0.2);
+  inherits: true;
+}
+@property --border-color-2 {
+  syntax: '<color>';
+  initial-value: hsla(340, 75%, 40%, 0.75);
+  inherits: true;
+}
+@property --stop-1 {
+  syntax: '<percentage>';
+  initial-value: 37.35%;
+  inherits: false;
+}
+@property --stop-2 {
+  syntax: '<percentage>';
+  initial-value: 61.36%;
+  inherits: false;
+}
+@property --stop-3 {
+  syntax: '<percentage>';
+  initial-value: 78.42%;
+  inherits: false;
+}
+@property --stop-4 {
+  syntax: '<percentage>';
+  initial-value: 89.52%;
+  inherits: false;
+}
+@property --stop-5 {
+  syntax: '<percentage>';
+  initial-value: 100%;
+  inherits: false;
+}
+
+.gradient-button,
+.button.gradient-button {
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 11px;
+  color: white;
+  background: radial-gradient(
+    var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+    var(--color-1) var(--stop-1),
+    var(--color-2) var(--stop-2),
+    var(--color-3) var(--stop-3),
+    var(--color-4) var(--stop-4),
+    var(--color-5) var(--stop-5)
+  );
+  transition: --pos-x 0.5s,
+    --pos-y 0.5s,
+    --spread-x 0.5s,
+    --spread-y 0.5s,
+    --color-1 0.5s,
+    --color-2 0.5s,
+    --color-3 0.5s,
+    --color-4 0.5s,
+    --color-5 0.5s,
+    --border-angle 0.5s,
+    --border-color-1 0.5s,
+    --border-color-2 0.5s,
+    --stop-1 0.5s,
+    --stop-2 0.5s,
+    --stop-3 0.5s,
+    --stop-4 0.5s,
+    --stop-5 0.5s;
+}
+.gradient-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    var(--border-angle),
+    var(--border-color-1),
+    var(--border-color-2)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.gradient-button:hover,
+.gradient-button:focus-visible,
+.gradient-button:active {
+  --pos-x: 0%;
+  --pos-y: 91.51%;
+  --spread-x: 120.24%;
+  --spread-y: 103.18%;
+  --color-1: #c96287;
+  --color-2: #c66c64;
+  --color-3: #cc7d23;
+  --color-4: #37140a;
+  --color-5: #000;
+  --border-angle: 190deg;
+  --border-color-1: hsla(340, 78%, 90%, 0.1);
+  --border-color-2: hsla(340, 75%, 90%, 0.6);
+  --stop-1: 0%;
+  --stop-2: 8.8%;
+  --stop-3: 21.44%;
+  --stop-4: 71.34%;
+  --stop-5: 85.76%;
+}
+.gradient-button-variant {
+  --color-1: #000022;
+  --color-2: #1f3f6d;
+  --color-3: #469396;
+  --color-4: #f1ffa5;
+  --border-angle: 200deg;
+  --border-color-1: hsla(320, 75%, 90%, 0.6);
+  --border-color-2: hsla(320, 50%, 90%, 0.15);
+}
+.gradient-button-variant:hover,
+.gradient-button-variant:focus-visible,
+.gradient-button-variant:active {
+  --pos-x: 0%;
+  --pos-y: 95.51%;
+  --spread-x: 110.24%;
+  --spread-y: 110.2%;
+  --color-1: #000020;
+  --color-2: #f1ffa5;
+  --color-3: #469396;
+  --color-4: #1f3f6d;
+  --color-5: #000;
+  --stop-1: 0%;
+  --stop-2: 10%;
+  --stop-3: 35.44%;
+  --stop-4: 71.34%;
+  --stop-5: 90.76%;
+  --border-angle: 210deg;
+  --border-color-1: hsla(320, 75%, 90%, 0.2);
+  --border-color-2: hsla(320, 50%, 90%, 0.75);
+}
+.gradient-button:focus-visible {
+  outline: 3px solid #81aa3a;
+  outline-offset: 4px;
+}
+.gradient-button:disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+.header > .button.gradient-button { min-width: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .gradient-button,
+  .button.gradient-button { transition: none; }
+}

@@ -49,4 +49,22 @@ Sélecteur interactif maison/copropriété/solaire avec onglets accessibles au c
 
 ## Correction des CTA
 
-Le composant commun rend un lien HTML natif, un seul libellé et une flèche. Les deux faces et la temporisation de navigation ont été supprimées. La mise en page minimale est isolée dans un CSS Module afin que les styles du composant soient compilés avec lui. L’effet demandé sera repris à partir d’une référence visuelle précise.
+Le composant commun rend un lien HTML natif, un seul libellé et une flèche. Les deux faces et la temporisation de navigation ont été supprimées. La mise en page minimale est isolée dans un CSS Module afin que les styles du composant soient compilés avec lui. Le Gradient Button fourni depuis 21st.dev est désormais utilisé via Radix Slot : le lien reçoit directement le dégradé, sans bouton imbriqué et sans second libellé.
+
+## Composants UI et Tailwind
+
+Le projet est déjà configuré avec Next.js App Router, TypeScript, Tailwind CSS 4 via `@tailwindcss/postcss`, et l’alias `@/*`. Les styles sont dans `app/globals.css` ; conserver `@import 'tailwindcss'` (les trois directives `@tailwind` du snippet concernent Tailwind 3).
+
+`components/ui` contient les primitives réutilisables compatibles shadcn ; les composants métier restent dans `components`. Ce dossier et les alias de `components.json` permettent aux composants importés et au CLI shadcn de partager les mêmes chemins. `lib/utils.ts` fournit déjà `cn`.
+
+Après récupération des modifications :
+
+```bash
+npm install
+npm run typecheck
+npm run build
+```
+
+Les dépendances ajoutées sont `@radix-ui/react-slot` et `class-variance-authority`. Aucun provider, hook, état, image ou secret supplémentaire n’est requis. Le composant expose `variant`, `asChild` et les attributs natifs de bouton. Les CTA utilisent `asChild` avec un lien `/devis` et les paramètres de projet existants. Les icônes restent fournies par `lucide-react`.
+
+Le dégradé reprend les couleurs et valeurs du code fourni. Le même effet est accessible au clavier et à l’appui ; les transitions sont désactivées pour `prefers-reduced-motion`. Les règles sont ajoutées hors couche pour ne pas être masquées par les anciens styles globaux. Le fichier `components/ui/gradient-button-demo.tsx` expose les deux variantes pour développement ; il n’est pas affiché dans les pages commerciales.
