@@ -41,7 +41,7 @@ La route `/devis` propose trois étapes validées côté navigateur : logement, 
 
 ## Enrichissement visuel et éditorial
 
-Deux scènes résidentielles originales générées et encodées en WebP complètent les photographies existantes. Elles sont explicitement présentées comme illustrations. Les 29 guides incluent désormais un cas concret, une liste de vérification, une question complémentaire, une erreur à éviter et plusieurs accès au devis. Les boutons de devis sont répétés dans les sections clés et une barre fixe est affichée sur mobile hors de la page devis.
+Deux scènes résidentielles originales générées et encodées en WebP complètent les photographies existantes. Elles sont explicitement présentées comme illustrations. Les 29 guides incluent désormais un cas concret, une liste de vérification, une question complémentaire, une erreur à éviter et plusieurs accès au devis. Un seul bouton de devis est rendu par page dans l’en-tête fixe, sur ordinateur comme sur mobile. Il est masqué sur `/devis`, où le formulaire constitue l’action principale. Les CTA répétés dans les sections, les guides, le pied de page et la barre mobile ont été retirés.
 
 ## Améliorations du parcours
 
@@ -65,7 +65,7 @@ npm run typecheck
 npm run build
 ```
 
-Les dépendances ajoutées sont `@radix-ui/react-slot` et `class-variance-authority`. Aucun provider, hook, état, image ou secret supplémentaire n’est requis. Le composant expose `variant`, `asChild` et les attributs natifs de bouton. Les CTA utilisent `asChild` avec un lien `/devis` et les paramètres de projet existants. Les icônes restent fournies par `lucide-react`.
+Les dépendances ajoutées sont `@radix-ui/react-slot` et `class-variance-authority`. Aucun provider, hook, état, image ou secret supplémentaire n’est requis. Le composant expose `variant`, `asChild` et les attributs natifs de bouton. Le CTA unique de l’en-tête utilise `asChild` avec un lien `/devis`. Les paramètres `?projet=` restent acceptés par la page de devis pour les accès directs. Les icônes restent fournies par `lucide-react`.
 
 Le dégradé conserve le mécanisme du code fourni, avec une palette adaptée à GALEOHM : vert lumineux et texte bleu pétrole pour les actions principales, dégradé pétrole pour la variante secondaire. Le même effet est accessible au clavier et à l’appui ; les transitions sont désactivées pour `prefers-reduced-motion`. Les règles sont ajoutées hors couche pour ne pas être masquées par les anciens styles globaux. Le fichier `components/ui/gradient-button-demo.tsx` expose les deux variantes pour développement ; il n’est pas affiché dans les pages commerciales.
 
