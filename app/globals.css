@@ -111,7 +111,8 @@
 }
 
 .gradient-button,
-.button.gradient-button {
+.button.gradient-button,
+.button.gradient-button:is(:hover, :focus-visible, :active) {
   position: relative;
   appearance: none;
   cursor: pointer;
