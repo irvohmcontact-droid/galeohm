@@ -72,3 +72,9 @@ Le dégradé conserve le mécanisme du code fourni, avec une palette adaptée à
 ## Hiérarchie des couleurs
 
 Les tokens de marque sont déclarés dans `app/globals.css` : pétrole `#063b49` pour identité et titres, vert logo `#78a925`, blanc cassé `#f7f8f2` et fonds sauge `#eaf0e2`. Les CTA de devis utilisent le vert lumineux `#c3f05b`, un dégradé vert animé et un texte pétrole. Les liens secondaires restent soulignés ou en contour ; la zone finale utilise un fond sauge pour laisser ressortir son CTA. Les couleurs du fichier logo fourni sont conservées.
+
+## Finitions des interactions
+
+Revue guidée par les skills `emil-design-eng`, `review-animations`, `animation-performance` et `mobile-native` du dépôt https://github.com/emilkowalski/skills. Survols limités à une souris précise, retours à l’appui courts, champs tactiles à 16 px, courbes de sortie communes, progression par scaleX et changement d’onglet immédiat au clavier. Le bouton Gradient 21st.dev est conservé avec sa palette et un mouvement de 220 ms ; ce dégradé implique toujours de la peinture et n’est pas présenté comme une animation exclusivement GPU. Le titre est visible dans le HTML serveur et son animation décorative utilise WAAPI après entrée dans le viewport, annulée si la préférence de mouvement réduit change. La couleur du navigateur reprend le fond de l’en-tête, sans bloquer le zoom.
+
+La palette et le CTA unique sont préservés. Les références SEO du domaine ne font pas partie de cette modification. Les contrôles de code et de compilation ne remplacent pas les essais Safari/iPhone et Android sur matériel réel.

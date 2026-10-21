@@ -1,199 +1,90 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export type TextBlurRevealBy = "words" | "letters";
 export type TextBlurRevealDirection = "top" | "bottom";
-
 export interface TextBlurRevealProps {
-  /** The string to reveal. */
   text?: string;
-  /** Stagger delay between segments, in milliseconds. */
   delay?: number;
-  /** Outer layout class (size, weight, tracking, color). */
   className?: string;
-  /** How to split the text. Default: `"words"`. */
   animateBy?: TextBlurRevealBy;
-  /** Enter direction for the blur travel. Default: `"top"`. */
   direction?: TextBlurRevealDirection;
-  /** IntersectionObserver threshold (0–1). */
   threshold?: number;
-  /** IntersectionObserver rootMargin. */
   rootMargin?: string;
-  /** Fired when the last segment finishes. */
   onAnimationComplete?: () => void;
-  /** Duration of each keyframe step, in seconds. */
   stepDuration?: number;
-  /** When false, play on mount instead of waiting for viewport. Default: true. */
   startOnView?: boolean;
-  /** Element to render, such as "h1" or "h2" for a heading. Default: `"p"`. */
   as?: keyof React.JSX.IntrinsicElements;
 }
 
-/**
- * TextBlurReveal
- *
- * Blur-in stagger for headlines — by word or letter — with a two-step
- * settle from top or bottom. Reduced-motion safe.
- *
- * Letter mode keeps each word in a nowrap group so wraps never split
- * mid-word (e.g. "inte" / "nt.").
- */
+/** Visible in server HTML; a short, once-only headline reveal enhances it after hydration. */
 export function TextBlurReveal({
-  text = "",
-  delay = 200,
-  className,
-  animateBy = "words",
-  direction = "top",
-  threshold = 0.1,
-  rootMargin = "0px",
-  onAnimationComplete,
-  stepDuration = 0.35,
-  startOnView = true,
-  as = "p",
+  text = "", delay = 50, className, animateBy = "words", direction = "top",
+  threshold = .1, rootMargin = "0px", onAnimationComplete, stepDuration = .14,
+  startOnView = true, as = "p",
 }: TextBlurRevealProps) {
-  const [inView, setInView] = React.useState(false);
-  const [reduceMotion, setReduceMotion] = React.useState(false);
   const ref = React.useRef<HTMLElement>(null);
   const Tag = as as unknown as React.ComponentType<
-    React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement | null> }
+    React.HTMLAttributes<HTMLElement> & {ref?: React.Ref<HTMLElement | null>}
   >;
-
-  const fromY = direction === "top" ? -50 : 50;
-  const midY = direction === "top" ? 5 : -5;
-  const totalDuration = Math.max(0.1, stepDuration * 2);
-  const words = React.useMemo(() => text.split(" "), [text]);
-  const letterCount = React.useMemo(
-    () => words.reduce((sum, word) => sum + word.length, 0),
-    [words],
-  );
-
   React.useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
-      return;
-    }
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
-
-  React.useEffect(() => {
-    if (reduceMotion) {
-      setInView(true);
-      return;
-    }
-
-    if (!startOnView) {
-      const id = window.requestAnimationFrame(() => setInView(true));
-      return () => window.cancelAnimationFrame(id);
-    }
-
     const node = ref.current;
-    if (!node || typeof IntersectionObserver === "undefined") {
-      setInView(true);
-      return;
+    if (!node) return;
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let disposed = false;
+    let played = false;
+    const animations: Animation[] = [];
+    const cancel = () => { if (preference.matches) animations.forEach(a => a.cancel()); };
+    preference.addEventListener("change", cancel);
+    function reveal() {
+      if (played || disposed) return;
+      played = true;
+      if (preference.matches || !node || !node.animate) {
+        onAnimationComplete?.();
+        return;
+      }
+      const segments = node.querySelectorAll<HTMLElement>("[data-reveal-segment]");
+      segments.forEach((segment, index) => {
+        animations.push(segment.animate([
+          {opacity: 0, transform: `translateY(${direction === "top" ? -8 : 8}px)`, filter: "blur(2px)"},
+          {opacity: 1, transform: "translateY(0)", filter: "blur(0px)"},
+        ], {
+          duration: Math.min(400, Math.max(160, stepDuration * 2000)),
+          delay: Math.min(index * Math.min(Math.max(delay, 0), 60), 240),
+          easing: "cubic-bezier(0.23, 1, 0.32, 1)",
+          fill: "backwards",
+        }));
+      });
+      Promise.all(animations.map(a => a.finished)).then(() => {
+        if (!disposed) onAnimationComplete?.();
+      }).catch(() => { /* Preference changes and unmounts cancel decorative motion. */ });
     }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setInView(true);
-          observer.unobserve(node);
-        }
-      },
-      { threshold, rootMargin },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [threshold, rootMargin, startOnView, reduceMotion]);
-
-  function segmentMotion(index: number, isLast: boolean) {
-    return {
-      className: "inline-block",
-      initial: {
-        filter: "blur(10px)",
-        opacity: 0,
-        y: fromY,
-      },
-      animate: inView
-        ? {
-            filter: ["blur(10px)", "blur(5px)", "blur(0px)"],
-            opacity: [0, 0.5, 1],
-            y: [fromY, midY, 0],
-          }
-        : {
-            filter: "blur(10px)",
-            opacity: 0,
-            y: fromY,
-          },
-      transition: {
-        duration: totalDuration,
-        times: [0, 0.5, 1] as number[],
-        delay: (index * delay) / 1000,
-        ease: "easeOut" as const,
-      },
-      onAnimationComplete: isLast ? onAnimationComplete : undefined,
+    let observer: IntersectionObserver | undefined;
+    if (!startOnView || !("IntersectionObserver" in window)) reveal();
+    else {
+      observer = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) { reveal(); observer?.disconnect(); }
+      }, {threshold, rootMargin});
+      observer.observe(node);
+    }
+    return () => {
+      disposed = true;
+      observer?.disconnect();
+      animations.forEach(a => a.cancel());
+      preference.removeEventListener("change", cancel);
     };
-  }
+  }, [text, delay, animateBy, direction, threshold, rootMargin, onAnimationComplete, stepDuration, startOnView]);
 
-  if (reduceMotion) {
-    return (
-      <Tag className={cn("flex flex-wrap", className)} ref={ref}>
-        {text}
-      </Tag>
-    );
-  }
-
-  if (animateBy === "letters") {
-    let stagger = 0;
-
-    return (
-      <Tag className={cn("flex flex-wrap", className)} ref={ref} aria-label={text}>
-        <span className="sr-only">{text}</span>
-        {words.map((word, wordIndex) => (
-          <span
-            key={`word-${wordIndex}-${word}`}
-            className="inline-flex whitespace-nowrap"
-            aria-hidden="true"
-          >
-            {word.split("").map((char) => {
-              const index = stagger;
-              stagger += 1;
-              return (
-                <motion.span
-                  key={`letter-${index}`}
-                  {...segmentMotion(index, index === letterCount - 1)}
-                >
-                  {char}
-                </motion.span>
-              );
-            })}
-            {wordIndex < words.length - 1 ? (
-              <span className="inline-block">&nbsp;</span>
-            ) : null}
-          </span>
-        ))}
-      </Tag>
-    );
-  }
-
-  return (
-    <Tag className={cn("flex flex-wrap", className)} ref={ref} aria-label={text}>
-      <span className="sr-only">{text}</span>
-      {words.map((word, index) => (
-        <motion.span
-          key={`word-${index}-${word}`}
-          {...segmentMotion(index, index === words.length - 1)}
-          aria-hidden="true"
-        >
-          {word}
-          {index < words.length - 1 ? "\u00A0" : null}
-        </motion.span>
-      ))}
-    </Tag>
-  );
+  const words = text.split(" ");
+  return <Tag ref={ref} className={cn("flex flex-wrap", className)}>
+    <span className="sr-only">{text}</span>
+    {words.map((word, i) => <span className="inline-flex whitespace-nowrap" aria-hidden="true" key={i}>
+      {animateBy === "letters" ? Array.from(word).map((letter, j) =>
+        <span className="inline-block" data-reveal-segment key={j}>{letter}</span>
+      ) : <span className="inline-block" data-reveal-segment>{word}</span>}
+      {i < words.length - 1 ? "\u00a0" : null}
+    </span>)}
+  </Tag>;
 }
